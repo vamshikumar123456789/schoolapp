@@ -1,0 +1,31 @@
+.parent{
+background-color: darkkhaki;
+height: 50vh;
+width: 50vw;
+margin: 10%;
+border-radius: 15px;
+box-shadow: 2px 2px 5px black;
+text-shadow: 1px 1px 2px white;
+
+}
+label{
+  
+    width: 200px;
+    margin: 25px;
+}
+p{
+    margin: 15px;
+}
+h1{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+input{
+    margin-top: 10px;
+}
+button{
+    margin-left: 25px;
+}
