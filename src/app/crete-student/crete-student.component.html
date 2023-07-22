@@ -1,0 +1,50 @@
+<div [formGroup]="studentForm">
+    <label>name:</label>
+    <input type="text" formControlName="name">
+    <br>
+    <label>class:</label>
+    <input type="text" formControlName="class">
+    <br>
+    <label>fathername:</label>
+    <input type="text" formControlName="fathername">
+    <br>
+    <label>email:</label>
+    <input type="email" formControlName="email">
+    <br>
+    <label>dob:</label>
+    <input type="date" formControlName="dob">
+    <br>
+
+
+    <div formGroupName="address">
+        <label>city:</label>
+        <input type="text" formControlName="city">
+        <br>
+        <label>state:</label>
+        <input type="text" formControlName="state">
+        <br>
+        <label>pincode:</label>
+        <input type="number" formControlName="pincode">
+        <br>
+    </div>
+
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls; let i=index">
+
+            <div formGroupName="{{i}}">
+
+                <label>type</label>
+                <input type="radio" name="a">
+                <label>Day scholar</label>
+                <input type="radio" name="a">
+                <label>Hostel</label>
+            
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-info">marks</button>
+    <br>
+    <button (click)="submit()" class="btn btn-primary">submit</button>
+</div>
