@@ -28,23 +28,41 @@
         <br>
     </div>
 
-
+    <button class="btn btn-info" (click)="addmarks()">marks</button>
     <div formArrayName="cards">
         <div *ngFor="let card of cardsFormArray.controls; let i=index">
 
             <div formGroupName="{{i}}">
+                <h5>Semister {{i+1}}</h5>
+                <label >internal</label>
+                <input type="number" formControlName="internal">
+                <label >practical</label>
+                <input type="number" formControlName="practical">
+                <label >assaignment</label>
+                <input type="number" formControlName="assaignment">
+                <label >final</label>
+                <input type="number" formControlName="final">
+                <button class="btn btn-danger" (click)="deletemarks(i)">delete</button>
 
-                <label>type</label>
-                <input type="radio" name="a">
-                <label>Day scholar</label>
-                <input type="radio" name="a">
-                <label>Hostel</label>
-            
             </div>
         </div>
     </div>
 
-    <button class="btn btn-info">marks</button>
+    <label>type</label>
+    <input type="radio" name="a" formControlName="type" value="busfee">
+    <label>Day scholar</label>
+    <input type="radio" name="a" formControlName="type" value="hostelfee">
+    <label>Hostel</label>
+
+    <div *ngIf="studentForm.get('type')?.value == 'busfee'">
+        <label>bus fee</label>
+        <input type="number">
+    </div>
+
+    <div *ngIf="studentForm.get('type')?.value == 'hostelfee'">
+        <label>Hostel fee</label>
+        <input type="number">
+    </div>
     <br>
     <button (click)="submit()" class="btn btn-primary">submit</button>
 </div>

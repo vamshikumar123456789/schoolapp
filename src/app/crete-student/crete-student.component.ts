@@ -18,15 +18,30 @@ public studentForm:FormGroup = new FormGroup({
   state:new FormControl(),
   pincode:new FormControl()
   }),
-  cards:new FormArray([])
+  cards:new FormArray([]),
+  type:new FormControl,
+  busfee: new FormControl,
+  hostelfee: new FormControl
 })
 get cardsFormArray(){
   return this.studentForm.get('cards') as FormArray;
 }
 
-
+addmarks(){
+  this.cardsFormArray.push(
+    new FormGroup({
+      internal:new FormControl(),
+      practical:new FormControl(),
+      assaignment: new FormControl(),
+      final: new FormControl()
+    })
+  )
+}
 
 submit(){
   console.log(this.studentForm)
+}
+deletemarks(i:number){
+this.cardsFormArray.removeAt(i)
 }
 }
