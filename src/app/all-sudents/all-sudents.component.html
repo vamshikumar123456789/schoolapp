@@ -1,1 +1,57 @@
-<p>all-sudents works!</p>
+<input type="text" [(ngModel)]="term" (keypress)="getfilteredinfo()">
+
+<label>column</label>
+<select [(ngModel)]="column" >
+<option >value</option>
+<option>phone</option>
+<option>city</option>
+</select>
+
+<label>order</label>
+<select [(ngModel)]="order" >
+<option >asc</option>
+<option>desc</option>
+</select>
+
+<button (click)="getsortedinfo()">sort</button>
+
+<label>limit</label>
+<select [(ngModel)]="limit" >
+<option >5</option>
+<option>10</option>
+<option>15</option>
+</select>
+
+<label>page</label>
+<select [(ngModel)]="page" >
+<option >1</option>
+<option>2</option>
+<option>3</option>
+</select>
+
+<button (click)="getpagedinfo()">ok</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>phone</th>
+            <th>city</th>
+            <th>fee</th>
+            <th>id</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let info of infos">
+            <td>{{info.name}}</td>
+            <td>{{info.phone}}</td>
+            <td>{{info.city}}</td>
+            <td>{{info.fee}}</td>
+            <td>{{info.id}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteinfo(info.id)">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
