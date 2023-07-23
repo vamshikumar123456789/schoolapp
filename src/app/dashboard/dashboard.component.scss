@@ -7,14 +7,18 @@
     height: 100%;
     width: 25%;
     background-image: linear-gradient(to right, rgba(55, 0, 255, 0), rgb(56, 228, 85));
+   
+    
 }
+
 .c2{
     height: 100%;
     width: 75%;
     background-image: linear-gradient(to left,skyblue,white,silver,pink);
+    overflow: auto;
 }
 h1,h2{
-    margin-left: 30px;
+    text-align: center;
     
 }
 h2:hover{
@@ -23,5 +27,6 @@ width: 100%;
 cursor: pointer;
 }
 button{
-    margin-left: 25px;
+   position: relative;
+   left: 120px;
 }
