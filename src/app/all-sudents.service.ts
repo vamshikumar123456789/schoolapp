@@ -14,6 +14,10 @@ export class AllSudentsService {
     return this.httpclient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student")
   }
 
+  getinformation(id:any):Observable<any>{
+    return this.httpclient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+id);
+  }
+
   getfilteredinfo(term:any):Observable<any>{
     return this.httpclient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student?filter="+term);
   }
