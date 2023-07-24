@@ -50,6 +50,10 @@
             <td>{{info.fee}}</td>
             <td>{{info.id}}</td>
             <td>
+                <button class="btn btn-primary" (click)="view(info.id)">view</button>
+                <br>
+                <button class="btn btn-warning" (click)="edit(info.id)">edit</button>
+                <br>
                 <button class="btn btn-danger" (click)="deleteinfo(info.id)">delete</button>
             </td>
         </tr>

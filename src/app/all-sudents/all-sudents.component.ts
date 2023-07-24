@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AllSudentsService } from '../all-sudents.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-sudents',
@@ -14,7 +15,7 @@ public order:string="";
 public limit:string="";
 public page:string="";
 
-constructor(private allsudentsService:AllSudentsService){
+constructor(private allsudentsService:AllSudentsService,private router:Router){
   this.allsudentsService.getinfo().subscribe(
     (data:any)=>{
       this.infos=data;
@@ -68,5 +69,13 @@ deleteinfo(id:any){
       alert("internal server error")
     }
   )
+}
+
+view( id:any){
+  this.router.navigateByUrl('/dashboard/student-details/'+id)
+}
+
+edit(id:number){
+this.router.navigateByUrl('/dashboard/edit-student/'+id)
 }
 }
